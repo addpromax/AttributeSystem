@@ -24,49 +24,37 @@ task("info") {
     println(project.version.toString())
 }
     // TabooLib 配置
-    taboolib {
-        description {
-            contributors {
-                name("Glom_")
-        }
-        dependencies {
-            name("Pouvoir")
-            name("GermPlugin").optional(true)
-            name("MythicMobs").optional(true)
-            name("DragonCore").optional(true)
-        }
-    }
-        env {
-            install(
-                "minecraft-chat",
-                "basic-configuration",
-                "bukkit-hook",
-                "bukkit-util",
-                "bukkit-xseries",
-                "bukkit-xseries-item",
-                "bukkit-xseries-skull",
-                "platform-bukkit",
-                "platform-bukkit-impl",
-                "nms",
-                "nms-util-tag",
-                "nms-util-tag-12005",
-                "nms-util-tag-legacy",
-                "bukkit-nms-stable",
-                "bukkit-nms-legacy",
-                "minecraft-kether",
-                "bukkit-ui",
-                "minecraft-chat",
-                "bukkit-navigation",
-                "bukkit-fake-op",
-                "minecraft-command-helper",
-                "minecraft-metrics"
-  
+taboolib {
+    env {
+        install(
+            "minecraft-chat",
+            "basic-configuration",
+            "bukkit-hook",
+            "bukkit-util",
+            "bukkit-xseries",
+            "bukkit-xseries-item",
+            "bukkit-xseries-skull",
+            "platform-bukkit",
+            "platform-bukkit-impl",
+            "nms",
+            "nms-util-tag",
+            "nms-util-tag-12005",
+            "nms-util-tag-legacy",
+            "bukkit-nms-stable",
+            "bukkit-nms-legacy",
+            "minecraft-kether",
+            "bukkit-ui",
+            "minecraft-chat",
+            "bukkit-navigation",
+            "bukkit-fake-op",
+            "minecraft-command-helper",
+            "minecraft-metrics"
             )
             forceDownloadInDev = false
             repoTabooLib = "http://sacredcraft.cn:8081/repository/releases/"
         }
-        version {
-            taboolib = "6.2.0-beta1"
+    version {
+        taboolib = "6.2.0-beta1"
         }
     }
 
