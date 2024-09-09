@@ -23,11 +23,11 @@ task("info") {
     println(project.name + "-" + project.version)
     println(project.version.toString())
 }
-taboolib {
-
-    description {
-        contributors {
-            name("Glom_")
+    // TabooLib 配置
+    taboolib {
+        description {
+            contributors {
+                name("Glom_")
         }
         dependencies {
             name("Pouvoir")
@@ -36,16 +36,38 @@ taboolib {
             name("DragonCore").optional(true)
         }
     }
-
-    env {
-        // basic
-        install(UNIVERSAL,BUKKIT, BUKKIT_ALL)
-        // util
-        install( NMS_UTIL, NMS,
-            METRICS,
-            EXPANSION_COMMAND_HELPER,
-            EXPANSION_PLAYER_FAKE_OP,
-            NAVIGATION)
+        env {
+            install(
+                "minecraft-chat",
+                "basic-configuration",
+                "bukkit-hook",
+                "bukkit-util",
+                "bukkit-xseries",
+                "bukkit-xseries-item",
+                "bukkit-xseries-skull",
+                "platform-bukkit",
+                "platform-bukkit-impl",
+                "nms",
+                "nms-util-tag",
+                "nms-util-tag-12005",
+                "nms-util-tag-legacy",
+                "bukkit-nms-stable",
+                "bukkit-nms-legacy",
+                "minecraft-kether",
+                "bukkit-ui",
+                "minecraft-chat",
+                "bukkit-navigation",
+                "bukkit-fake-op",
+                "minecraft-command-helper",
+                "minecraft-metrics"
+  
+            )
+            forceDownloadInDev = false
+            repoTabooLib = "http://sacredcraft.cn:8081/repository/releases/"
+        }
+        version {
+            taboolib = "6.2.0-beta1"
+        }
     }
 
 
@@ -206,3 +228,17 @@ nexusStaging {
 signing {
     sign(publishing.publications.getAt("library"))
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
